@@ -5,3 +5,19 @@
 html {
     scroll-behavior: smooth;
 }
+
+.text-gradient {
+    background: -webkit-linear-gradient(
+        right,
+        #db2828 33%,
+        #66cbf6 66%,
+        #12e20e 100%
+    );
+
+    -webkit-background-clip: text;
+    /*   
+    `color` seems to work too
+    -webkit-text-fill-color: transparent; 
+  */
+    color: transparent;
+}

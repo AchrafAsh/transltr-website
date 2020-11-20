@@ -39,7 +39,7 @@ const LinkWrapper: React.FC<{ href: string; title: string }> = ({
 const Footer: React.FC = () => {
     return (
         <footer className='max-w-5xl mx-auto my-12'>
-            <hr className='bg-none border-1 border-gray-200 max-w-md mx-auto' />
+            <hr className='bg-none border-1 border-gray-200 w-8/12 lg:max-w-md mx-auto' />
             <div className='flex flex-row space-x-12 justify-center py-12 text-gray-400'>
                 <ul className='flex flex-col space-y-1'>
                     <li>
@@ -113,32 +113,32 @@ const Home: React.FC = () => {
                 <Head>
                     <title>transltr | bring your website to the world</title>
                 </Head>
-                <section id='hero' className='max-w-6xl mx-auto'>
-                    <div className='flex flex-row justify-between items-center text-gray-600'>
-                        <div className='flex-1 flex flex-col space-y-4'>
-                            <h1 className=' font-medium text-6xl'>
+                <section id='hero' className='max-w-6xl mx-auto px-6 xl:p-0'>
+                    <div className='flex flex-col-reverse md:flex-row justify-between items-center md:items-start text-gray-600'>
+                        <div className='flex-1 flex flex-col space-y-4 w-11/12'>
+                            <h1 className='font-medium text-4xl text-center md:text-left md:text-6xl'>
                                 Make your website available for everyone
                             </h1>
-                            <p className='font-light text-lg'>
+                            <p className='font-light text-lg text-center md:text-left'>
                                 Subscribe to get the latest update and be the
                                 first to translate your website with transltr!
                             </p>
-                            <div className='p-8'>
+                            <div className='py-8 lg:p-8 md:max-w-lg mx-auto w-full'>
                                 <form
                                     action='https://formspree.io/emai'
-                                    className='shadow rounded overflow-hidden flex flex-row'
+                                    className='shadow rounded overflow-hidden flex flex-col sm:flex-row'
                                 >
                                     <input
                                         type='text'
                                         name='email'
                                         id='email'
                                         placeholder='your email'
-                                        className='flex-1 py-2 px-8'
+                                        className='flex-1 py-2 px-8 text-center lg:text-left'
                                     />
                                     <input
                                         type='submit'
                                         value='get updated'
-                                        className='px-8 bg-yellow-100'
+                                        className='px-8 py-2 bg-yellow-100'
                                     />
                                 </form>
                             </div>
@@ -151,35 +151,43 @@ const Home: React.FC = () => {
 
                 <section
                     id='target'
-                    className='bg-gray-100 text-gray-600 mt-32'
+                    className='bg-gray-100 text-gray-600 mt-32 '
                 >
-                    <div className='py-24 max-w-6xl mx-auto'>
-                        <div className='flex flex-row justify-around'>
-                            <img src='images/solofounder.png' />
-                            <h2 className='uppercase text-4xl font-medium'>
-                                Ideal for...
-                            </h2>
-                            <img src='images/worldwide.png' />
-                        </div>
-                        <div className='flex flex-row justify-around pt-12'>
-                            <div className='max-w-md'>
-                                <h4 className='font-medium text-2xl'>
-                                    Solo-founders
-                                </h4>
-                                <p>
-                                    Too many priorities, let transltr manage the
-                                    translations for you. Reach a broader
-                                    audience without working more.
-                                </p>
+                    <div className='py-20 max-w-6xl mx-auto'>
+                        <h2 className='uppercase text-3xl lg:text-4xl font-medium text-center'>
+                            Ideal for...
+                        </h2>
+                        <div className='flex flex-col items-center lg:flex-row justify-around pt-12 px-12'>
+                            <div className='max-w-md text-center'>
+                                <img
+                                    src='images/solofounder.png'
+                                    className='mx-auto'
+                                />
+                                <div className='py-12'>
+                                    <h4 className='font-medium text-2xl'>
+                                        Solo-founders
+                                    </h4>
+                                    <p>
+                                        Too many priorities, let transltr manage
+                                        the translations for you. Reach a
+                                        broader audience without working more.
+                                    </p>
+                                </div>
                             </div>
-                            <div className='max-w-md text-right'>
-                                <h4 className='font-medium text-2xl'>
-                                    World-wide users
-                                </h4>
-                                <p>
-                                    Too many languages to manage. Make your
-                                    website accessible for all your users.
-                                </p>
+                            <div className='max-w-md text-center'>
+                                <img
+                                    src='images/worldwide.png'
+                                    className='mx-auto'
+                                />
+                                <div className='pt-12'>
+                                    <h4 className='font-medium text-2xl'>
+                                        World-wide users
+                                    </h4>
+                                    <p>
+                                        Too many languages to manage. Make your
+                                        website accessible for all your users.
+                                    </p>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -187,36 +195,36 @@ const Home: React.FC = () => {
 
                 <section
                     id='integration'
-                    className='text-gray-600 max-w-6xl mx-auto pt-32'
+                    className='text-gray-600 max-w-6xl mx-auto pt-32 '
                 >
-                    <h2 className='text-4xl font-medium uppercase text-center'>
+                    <h2 className='text-3xl lg:text-4xl font-medium uppercase text-center'>
                         Simple integration
                     </h2>
-                    <h2 className='text-center text-4xl font-medium'>
+                    <h2 className='text-center text-3xl lg:text-4xl font-medium'>
                         (no developer needed)
                     </h2>
-                    <div className='flex flex-col space-y-8 py-24'>
-                        <div className='flex flex-row items-center justify-between'>
-                            <div className='h-32 flex-1 bg-gray-100'></div>
+                    <div className='flex flex-col space-y-8 pt-24 lg:px-6'>
+                        <div className='flex flex-col-reverse lg:flex-row items-center justify-between'>
+                            <div className='h-32 w-60 lg:flex-1 bg-gray-100 m-3'></div>
                             <h4 className='flex-1 text-center text-2xl font-medium'>
                                 HTML integration
                             </h4>
                         </div>
-                        <div className='flex flex-row items-center justify-between'>
+                        <div className='flex flex-col lg:flex-row items-center justify-between'>
                             <h4 className='flex-1 text-center text-2xl font-medium'>
                                 React integration
                             </h4>
-                            <div className='h-32 flex-1 bg-gray-100'></div>
+                            <div className='h-32 w-60 lg:flex-1 bg-gray-100 m-3'></div>
                         </div>
                     </div>
                 </section>
 
                 <section
                     id='pricing'
-                    className='pt-32 max-w-6xl mx-auto text-gray-600'
+                    className='pt-32 max-w-6xl mx-auto text-gray-600 hidden'
                 >
-                    <div className='flex flex-row items-center'>
-                        <div className='shadow rounded-lg p-24 bg-gray-50 transform translate-x-4'>
+                    <div className='flex flex-col md:flex-row items-center'>
+                        <div className='shadow rounded-lg p-24 bg-gray-50 transform lg:translate-x-4'>
                             <h4 className='text-6xl font-medium text-center'>
                                 0€
                             </h4>
@@ -237,7 +245,7 @@ const Home: React.FC = () => {
                                 <li>analytics</li>
                             </ul>
                         </div>
-                        <div className='shadow rounded-lg p-24 bg-teal-50 transform -translate-x-4'>
+                        <div className='shadow rounded-lg p-24 bg-teal-50 transform lg:-translate-x-4'>
                             <h4 className='text-6xl font-medium text-center'>
                                 25€
                             </h4>
@@ -252,31 +260,33 @@ const Home: React.FC = () => {
                 </section>
                 <section
                     id='cta'
-                    className='pt-32 max-w-6xl mx-auto text-center text-gray-600'
+                    className='pt-32 max-w-6xl mx-auto text-center text-gray-600 '
                 >
-                    <h2 className='font-medium text-4xl uppercase'>
-                        Don't miss the launch!
-                    </h2>
-                    <p className='text-lg font-light py-6 max-w-xl mx-auto'>
-                        Subscribe to get updates and be among the first to
-                        translate ther website with transltr!
-                    </p>
-                    <div className='max-w-lg mx-auto'>
+                    <div className='px-10'>
+                        <h2 className='font-medium text-3xl lg:text-4xl uppercase'>
+                            Don't miss the launch!
+                        </h2>
+                        <p className='text-lg font-light py-6 max-w-xl mx-auto'>
+                            Subscribe to get updates and be among the first to
+                            translate ther website with transltr!
+                        </p>
+                    </div>
+                    <div className='p-8 md:max-w-lg mx-auto w-full'>
                         <form
                             action='https://formspree.io/emai'
-                            className='shadow rounded overflow-hidden flex flex-row'
+                            className='shadow rounded overflow-hidden flex flex-col sm:flex-row'
                         >
                             <input
                                 type='text'
                                 name='email'
                                 id='email'
                                 placeholder='your email'
-                                className='flex-1 py-2 px-8'
+                                className='flex-1 py-2 px-8 text-center lg:text-left'
                             />
                             <input
                                 type='submit'
                                 value='get updated'
-                                className='px-8 bg-yellow-100'
+                                className='px-8 py-2 bg-yellow-100'
                             />
                         </form>
                     </div>

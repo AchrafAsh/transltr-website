@@ -1,6 +1,5 @@
 import Head from 'next/head'
 import Link from 'next/link'
-import { CodeBlock, dracula } from 'react-code-blocks'
 
 const Navbar: React.FC = () => {
     return (
@@ -201,14 +200,10 @@ const Home: React.FC = () => {
                     <h2 className='text-3xl lg:text-4xl font-medium uppercase text-center'>
                         Simple integration
                     </h2>
-                    <div className='flex flex-col space-y-8 pt-24 lg:px-6'>
+                    <div className='flex flex-col space-y-8 pt-24 px-6'>
                         <div className='flex flex-col-reverse lg:flex-row items-center justify-between'>
-                            <div className='lg:flex-1 m-3 rounded-lg overflow-hidden shadow-2xl'>
-                                <CodeBlock
-                                    text={`<!-- HTML -->\n<script src="https://transltr.world/trsltr.js" defer></script>\n<div id="transltr"></div>`}
-                                    language='html'
-                                    theme={dracula}
-                                />
+                            <div className='w-full lg:flex-1 m-3 rounded-lg overflow-hidden shadow-2xl'>
+                                <pre className='bg-gray-800 text-gray-100 p-6 overflow-scroll'>{`<!-- HTML -->\n<script src="https://transltr.world/trsltr.js" defer></script>\n<div id="transltr"></div>`}</pre>
                             </div>
                             <h4 className='flex-1 text-center text-2xl font-medium'>
                                 HTML integration
@@ -218,12 +213,8 @@ const Home: React.FC = () => {
                             <h4 className='flex-1 text-center text-2xl font-medium'>
                                 React integration
                             </h4>
-                            <div className='lg:flex-1 m-3 rounded-lg overflow-hidden shadow-2xl'>
-                                <CodeBlock
-                                    text={`// React\nimport TransltrWidget from "transltr"\nimport "transltr/dist/index.css"\n\n<TransltrWidget />`}
-                                    language='jsx'
-                                    theme={dracula}
-                                />
+                            <div className='w-full lg:flex-1 m-3 rounded-lg overflow-hidden shadow-2xl'>
+                                <pre className='bg-gray-800 text-gray-100 p-6'>{`// React\nimport TransltrWidget from "transltr"\nimport "transltr/dist/index.css"\n\n<TransltrWidget />`}</pre>
                             </div>
                         </div>
                     </div>

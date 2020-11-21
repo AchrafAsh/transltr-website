@@ -23,3 +23,20 @@ html {
   */
     color: transparent;
 }
+
+.display-arrow {
+    position: fixed;
+    bottom: 5rem;
+    right: 3rem;
+    display: flex;
+    flex-direction: row;
+}
+
+.display-arrow small {
+    margin: 0 6px;
+    transform: translateY(-10px);
+}
+
+.display-arrow img {
+    transform: rotate(-225deg);
+}

@@ -2,7 +2,7 @@ import Link from 'next/link'
 
 const Page: React.FC = () => {
     return (
-        <main className='bg-yellow-50 w-screen h-screen flex flex-col items-center justify-center'>
+        <main className='w-full p-3 bg-yellow-50 w-screen h-screen flex flex-col items-center sm:justify-center'>
             <div className='flex flex-row justify-center space-x-3 p-6'>
                 <img className='w-8' src='images/logo.png' />
                 <Link href='/'>
@@ -13,7 +13,7 @@ const Page: React.FC = () => {
                     </a>
                 </Link>
             </div>
-            <div className='border border-yellow-700 rounded-lg bg-white shadow-lg p-10'>
+            <div className='w-full sm:w-min border border-yellow-700 rounded-lg bg-white shadow-lg p-10'>
                 <form action='' className='flex flex-col space-y-3'>
                     <input
                         type='text'

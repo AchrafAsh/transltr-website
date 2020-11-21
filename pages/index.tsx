@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import Link from 'next/link'
+import { CodeBlock, dracula } from 'react-code-blocks'
 
 const Navbar: React.FC = () => {
     return (
@@ -18,7 +19,7 @@ const Navbar: React.FC = () => {
                 <div>
                     <Link href='/login'>
                         <a className='bg-yellow-100 text-gray-700 px-8 py-2 rounded shadow'>
-                            signup
+                            login
                         </a>
                     </Link>
                 </div>
@@ -125,13 +126,13 @@ const Home: React.FC = () => {
                             </p>
                             <div className='py-8 lg:p-8 md:max-w-lg mx-auto w-full'>
                                 <form
-                                    action='https://formspree.io/emai'
-                                    className='shadow rounded overflow-hidden flex flex-col sm:flex-row'
+                                    action='https://formspree.io/f/mvovqjkq'
+                                    method='POST'
+                                    className='shadow border border-gray-200 rounded-md overflow-hidden flex flex-col sm:flex-row'
                                 >
                                     <input
                                         type='text'
                                         name='email'
-                                        id='email'
                                         placeholder='your email'
                                         className='flex-1 py-2 px-8 text-center lg:text-left'
                                     />
@@ -181,7 +182,7 @@ const Home: React.FC = () => {
                                 />
                                 <div className='pt-12'>
                                     <h4 className='font-medium text-2xl'>
-                                        World-wide users
+                                        Users from around the world
                                     </h4>
                                     <p>
                                         Too many languages to manage. Make your
@@ -200,12 +201,15 @@ const Home: React.FC = () => {
                     <h2 className='text-3xl lg:text-4xl font-medium uppercase text-center'>
                         Simple integration
                     </h2>
-                    <h2 className='text-center text-3xl lg:text-4xl font-medium'>
-                        (no developer needed)
-                    </h2>
                     <div className='flex flex-col space-y-8 pt-24 lg:px-6'>
                         <div className='flex flex-col-reverse lg:flex-row items-center justify-between'>
-                            <div className='h-32 w-60 lg:flex-1 bg-gray-100 m-3'></div>
+                            <div className='lg:flex-1 m-3 rounded-lg overflow-hidden shadow-2xl'>
+                                <CodeBlock
+                                    text={`<!-- HTML -->\n<script src="https://transltr.world/trsltr.js" defer></script>\n<div id="transltr"></div>`}
+                                    language='html'
+                                    theme={dracula}
+                                />
+                            </div>
                             <h4 className='flex-1 text-center text-2xl font-medium'>
                                 HTML integration
                             </h4>
@@ -214,7 +218,13 @@ const Home: React.FC = () => {
                             <h4 className='flex-1 text-center text-2xl font-medium'>
                                 React integration
                             </h4>
-                            <div className='h-32 w-60 lg:flex-1 bg-gray-100 m-3'></div>
+                            <div className='lg:flex-1 m-3 rounded-lg overflow-hidden shadow-2xl'>
+                                <CodeBlock
+                                    text={`// React\nimport TransltrWidget from "transltr"\nimport "transltr/dist/index.css"\n\n<TransltrWidget />`}
+                                    language='jsx'
+                                    theme={dracula}
+                                />
+                            </div>
                         </div>
                     </div>
                 </section>
@@ -273,13 +283,13 @@ const Home: React.FC = () => {
                     </div>
                     <div className='p-8 md:max-w-lg mx-auto w-full'>
                         <form
-                            action='https://formspree.io/emai'
-                            className='shadow rounded overflow-hidden flex flex-col sm:flex-row'
+                            action='https://formspree.io/f/mvovqjkq'
+                            method='POST'
+                            className='shadow border border-gray-200 rounded-md overflow-hidden flex flex-col sm:flex-row'
                         >
                             <input
                                 type='text'
                                 name='email'
-                                id='email'
                                 placeholder='your email'
                                 className='flex-1 py-2 px-8 text-center lg:text-left'
                             />

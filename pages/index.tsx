@@ -27,12 +27,13 @@ const Navbar: React.FC = () => {
     )
 }
 
-const LinkWrapper: React.FC<{ href: string; title: string }> = ({
+const LinkWrapper: React.FC<{ href: string; title: string; id: string }> = ({
     href,
-    title
+    title,
+    id
 }) => (
     <Link href={href}>
-        <a>{title}</a>
+        <a id={id}>{title}</a>
     </Link>
 )
 
@@ -43,19 +44,24 @@ const Footer: React.FC = () => {
             <div className='flex flex-row space-x-12 justify-center py-12 text-gray-400'>
                 <ul className='flex flex-col space-y-1'>
                     <li>
-                        <LinkWrapper href='/' title='Home' />
+                        <LinkWrapper id='footer-home' href='/' title='Home' />
                     </li>
                     <li>
                         <LinkWrapper
                             href='/#integration'
                             title='How it works'
+                            id='footer-integration'
                         />
                     </li>
+                    {/* <li>
+                        <LinkWrapper href='/#pricing' title='Pricing' id='footer-pricing' />
+                    </li> */}
                     <li>
-                        <LinkWrapper href='/#pricing' title='Pricing' />
-                    </li>
-                    <li>
-                        <LinkWrapper href='/login' title='Login' />
+                        <LinkWrapper
+                            href='/login'
+                            title='Login'
+                            id='footer-login'
+                        />
                     </li>
                 </ul>
                 <ul>
@@ -64,6 +70,7 @@ const Footer: React.FC = () => {
                             href='https://twitter.com/achrafash'
                             target='_blank'
                             rel='noopener noreferrer'
+                            id='footer-twitter'
                         >
                             Twitter
                         </a>
@@ -73,17 +80,9 @@ const Footer: React.FC = () => {
                             href='https://indiehackers.com/achrafash'
                             target='_blank'
                             rel='noopener noreferrer'
+                            id='footer-indie'
                         >
                             Indie Hackers
-                        </a>
-                    </li>
-                    <li>
-                        <a
-                            href='https://lechantier.co/users/achrafash'
-                            target='_blank'
-                            rel='noopener noreferrer'
-                        >
-                            Le Chantier
                         </a>
                     </li>
                 </ul>
@@ -116,10 +115,16 @@ const Home: React.FC = () => {
                 <section id='hero' className='max-w-6xl mx-auto px-6 xl:p-0'>
                     <div className='flex flex-col-reverse md:flex-row justify-between items-center md:items-start text-gray-600'>
                         <div className='flex-1 flex flex-col space-y-4 w-11/12'>
-                            <h1 className='font-medium text-4xl text-center md:text-left md:text-6xl'>
+                            <h1
+                                id='hero-title'
+                                className='font-medium text-4xl text-center md:text-left md:text-6xl'
+                            >
                                 Make your website available for everyone
                             </h1>
-                            <p className='font-light text-lg text-center md:text-left'>
+                            <p
+                                id='hero-p'
+                                className='font-light text-lg text-center md:text-left'
+                            >
                                 Subscribe to get the latest update and be the
                                 first to translate your website with transltr!
                             </p>
@@ -154,7 +159,10 @@ const Home: React.FC = () => {
                     className='bg-gray-100 text-gray-600 mt-32 '
                 >
                     <div className='py-20 max-w-6xl mx-auto'>
-                        <h2 className='uppercase text-3xl lg:text-4xl font-medium text-center'>
+                        <h2
+                            id='target-title'
+                            className='uppercase text-3xl lg:text-4xl font-medium text-center'
+                        >
                             Ideal for...
                         </h2>
                         <div className='flex flex-col items-center lg:flex-row justify-around pt-12 px-12'>
@@ -164,10 +172,13 @@ const Home: React.FC = () => {
                                     className='mx-auto'
                                 />
                                 <div className='py-12'>
-                                    <h4 className='font-medium text-2xl'>
+                                    <h4
+                                        id='target-1-title'
+                                        className='font-medium text-2xl'
+                                    >
                                         Solo-founders
                                     </h4>
-                                    <p>
+                                    <p id='target-1-p'>
                                         Too many priorities, let transltr manage
                                         the translations for you. Reach a
                                         broader audience without working more.
@@ -180,10 +191,13 @@ const Home: React.FC = () => {
                                     className='mx-auto'
                                 />
                                 <div className='pt-12'>
-                                    <h4 className='font-medium text-2xl'>
+                                    <h4
+                                        id='target-2-title'
+                                        className='font-medium text-2xl'
+                                    >
                                         Users from around the world
                                     </h4>
-                                    <p>
+                                    <p id='target-2-p'>
                                         Too many languages to manage. Make your
                                         website accessible for all your users.
                                     </p>
@@ -197,7 +211,10 @@ const Home: React.FC = () => {
                     id='integration'
                     className='text-gray-600 max-w-6xl mx-auto pt-32 '
                 >
-                    <h2 className='text-3xl lg:text-4xl font-medium uppercase text-center'>
+                    <h2
+                        id='integration-title'
+                        className='text-3xl lg:text-4xl font-medium uppercase text-center'
+                    >
                         Simple integration
                     </h2>
                     <div className='flex flex-col space-y-8 pt-24 px-6'>
@@ -205,12 +222,18 @@ const Home: React.FC = () => {
                             <div className='w-full lg:flex-1 m-3 rounded-lg overflow-hidden shadow-2xl'>
                                 <pre className='bg-gray-800 text-gray-100 p-6 overflow-scroll'>{`<!-- HTML -->\n<script src="https://transltr.world/trsltr.js" defer></script>\n<div id="transltr"></div>`}</pre>
                             </div>
-                            <h4 className='flex-1 text-center text-2xl font-medium'>
+                            <h4
+                                id='html-integration'
+                                className='flex-1 text-center text-2xl font-medium'
+                            >
                                 HTML integration
                             </h4>
                         </div>
                         <div className='flex flex-col lg:flex-row items-center justify-between'>
-                            <h4 className='flex-1 text-center text-2xl font-medium'>
+                            <h4
+                                id='react-integration'
+                                className='flex-1 text-center text-2xl font-medium'
+                            >
                                 React integration
                             </h4>
                             <div className='w-full lg:flex-1 m-3 rounded-lg overflow-hidden shadow-2xl'>
@@ -220,9 +243,9 @@ const Home: React.FC = () => {
                     </div>
                 </section>
 
-                <section
+                {/* <section
                     id='pricing'
-                    className='pt-32 max-w-6xl mx-auto text-gray-600 hidden'
+                    className='pt-32 max-w-6xl mx-auto text-gray-600'
                 >
                     <div className='flex flex-col md:flex-row items-center'>
                         <div className='shadow rounded-lg p-24 bg-gray-50 transform lg:translate-x-4'>
@@ -258,16 +281,22 @@ const Home: React.FC = () => {
                             </ul>
                         </div>
                     </div>
-                </section>
+                </section> */}
                 <section
                     id='cta'
                     className='pt-32 max-w-6xl mx-auto text-center text-gray-600 '
                 >
                     <div className='px-10'>
-                        <h2 className='font-medium text-3xl lg:text-4xl uppercase'>
+                        <h2
+                            id='cta-title'
+                            className='font-medium text-3xl lg:text-4xl uppercase'
+                        >
                             Don't miss the launch!
                         </h2>
-                        <p className='text-lg font-light py-6 max-w-xl mx-auto'>
+                        <p
+                            id='cta-text'
+                            className='text-lg font-light py-6 max-w-xl mx-auto'
+                        >
                             Subscribe to get updates and be among the first to
                             translate ther website with transltr!
                         </p>

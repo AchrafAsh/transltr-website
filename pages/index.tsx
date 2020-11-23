@@ -220,7 +220,7 @@ const Home: React.FC = () => {
                     <div className='flex flex-col space-y-8 pt-24 px-6'>
                         <div className='flex flex-col-reverse lg:flex-row items-center justify-between'>
                             <div className='w-full lg:flex-1 m-3 rounded-lg overflow-hidden shadow-2xl'>
-                                <pre className='bg-gray-800 text-gray-100 p-6 overflow-scroll'>{`<!-- HTML -->\n<script src="https://transltr.world/trsltr.js" defer></script>\n<div id="transltr"></div>`}</pre>
+                                <pre className='bg-gray-800 text-gray-100 p-6 overflow-x-auto whitespace-pre-line'>{`<!-- HTML -->\n<script src="https://transltr.world/trsltr.js" defer></script>\n<div id="transltr"></div>`}</pre>
                             </div>
                             <h4
                                 id='html-integration'
@@ -237,7 +237,7 @@ const Home: React.FC = () => {
                                 React integration
                             </h4>
                             <div className='w-full lg:flex-1 m-3 rounded-lg overflow-hidden shadow-2xl'>
-                                <pre className='bg-gray-800 text-gray-100 p-6'>{`// React\nimport TransltrWidget from "transltr"\nimport "transltr/dist/index.css"\n\n<TransltrWidget />`}</pre>
+                                <pre className='bg-gray-800 text-gray-100 p-6 overflow-x-auto whitespace-pre-line'>{`// React\nimport TransltrWidget from "transltr"\nimport "transltr/dist/index.css"\n\n<TransltrWidget />`}</pre>
                             </div>
                         </div>
                     </div>
